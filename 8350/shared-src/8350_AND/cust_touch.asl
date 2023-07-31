@@ -8,7 +8,7 @@
 // Abstract:
 //
 //     Contains device definitions for the Microsoft Surface
-//     Digitizer (Codename "D5/G5") over SPI. This digitizer
+//     Digitizer (Codename "D6/G6") over SPI. This digitizer
 //     implements version ~0.99 of the HID over SPI specification
 //     and is flashed with specific firmware to work on Surface
 //     Duo devices specifically. The digitizer exposes both a
@@ -48,7 +48,7 @@ Device (TSPI)
     Name(_DEP, Package()
     {
         \_SB.PEP0,
-        \_SB.SPI8,
+        \_SB.SPI5,
         \_SB.GIO0
     })
 
@@ -63,20 +63,20 @@ Device (TSPI)
                 ,                 // WireMode: defaults to FourWireMode (optional)
                 8,                // DataBitLength
                 ,                 // SlaveMode: defaults to ControllerInitiated (optional)
-                25000000,         // ConnectionSpeed: in Hz
+                32000000,         // ConnectionSpeed: in Hz
                 ClockPolarityLow, // ClockPolarity
                 ClockPhaseFirst,  // ClockPhase
-                "\\_SB.SPI8",     // ResourceSource: SPI bus controller name
+                "\\_SB.SPI5",     // ResourceSource: SPI bus controller name
                 ,                 // ResourceSourceIndex: defaults to 0 (optional)
                 ,                 // ResourceUsage: defaults to ResourceConsumer (optional)
                 ,                 // DescriptorName: creates name for offset of resource descriptor
                 )                 // VendorData
 
             // TOUCH_ASSERT
-            GpioInt(Edge, ActiveHigh, Exclusive, PullNone, 0, "\\_SB.GIO0", 0 , ResourceConsumer, , ) {3}
+            GpioInt(Edge, ActiveLow, Exclusive, PullNone, 0, "\\_SB.GIO0", 0 , ResourceConsumer, , ) {84}
 
             // TOUCH_SLEEP
-            GpioIo(Exclusive, PullNone, 0, 0, , "\\_SB.GIO0", ,) {1}
+            GpioIo(Exclusive, PullNone, 0, 0, , "\\_SB.GIO0", ,) {23}
         })
 
         Return (RBUF)
@@ -144,9 +144,9 @@ Device (TSPI)
             // Wait 300ms
             Sleep(300)
 
-            // TLMM GPIO_0 TOUCH_RESET
-            OperationRegion(GI00, SystemMemory, 0x03D00000, 0x20)
-            Field(GI00, DWordAcc, NoLock, Preserve)
+            // TLMM GPIO_8 TOUCH_RESET
+            OperationRegion(GI08, SystemMemory, 0x0F108000, 0x20)
+            Field(GI08, DWordAcc, NoLock, Preserve)
             {
                 DWD1,   32,
                 DWD2,   32
@@ -183,9 +183,9 @@ Device (TSPI)
 
     Method(_RST, 0x0, NotSerialized)
     {
-        // TLMM GPIO_0 TOUCH_RESET
-        OperationRegion (GI00, SystemMemory, 0x03D00000, 0x20)
-        Field (GI00, DWordAcc, NoLock, Preserve)
+        // TLMM GPIO_8 TOUCH_RESET
+        OperationRegion (GI08, SystemMemory, 0x0F108000, 0x20)
+        Field (GI08, DWordAcc, NoLock, Preserve)
         {
             DWD1,   32,
             DWD2,   32
@@ -255,6 +255,11 @@ Device (TSPI)
             })
             Return(PLDP)
         }
+
+        Method(_STA, 0)
+        {
+            Return (0x0)
+        }
     }
 
     Device(COL3)
@@ -315,14 +320,14 @@ Device (TSPI)
 
     Device(COL5)
     {
-        // 5 is always the address assigned for the Surface Pen BLE LC Adaptation Driver
+        // 5 is always the address assigned for the Surface Digitizer Heartbeat
         //
         Name(_ADR, 5)
     }
 
     Device(COL6)
     {
-        // 6 is always the address assigned for the Surface Pen Cfu Over Ble LC Connection
+        // 6 is always the address assigned for the Surface Touch Pen Device
         //
         Name(_ADR, 6)
     }
@@ -374,6 +379,11 @@ Device (TSPI)
             })
             Return(PLDP)
         }
+
+        Method(_STA, 0)
+        {
+            Return (0x0)
+        }
     }
 
     Device(COL8)
@@ -423,6 +433,34 @@ Device (TSPI)
             })
             Return(PLDP)
         }
+    }
+
+    Device(COL9)
+    {
+        // 9 is always the address assigned for the Surface Pen BLE LC Adaptation Driver
+        //
+        Name(_ADR, 9)
+    }
+
+    Device(CO10)
+    {
+        // 10 is always the address assigned for the Surface Firmware Update
+        //
+        Name(_ADR, 10)
+    }
+
+    Device(CO11)
+    {
+        // 11 is always the address assigned for the Surface Pen Cfu Over Ble LC Connection
+        //
+        Name(_ADR, 11)
+    }
+
+    Device(CO12)
+    {
+        // 12 is always the address assigned for the Surface HID Pen ID
+        //
+        Name(_ADR, 12)
     }
 }
 
