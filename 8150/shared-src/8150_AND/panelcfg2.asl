@@ -22,10 +22,10 @@
 //     SPDX-License-Identifier: MIT
 //
 
-Name (PCFG,
+Name (PCF2,
     Buffer() {"<?xml version='1.0' encoding='utf-8'?>
 <Group id='Main Panel - Secondary'>
-    <PanelName>LGSW43408</PanelName>
+    <PanelName>LGSW43416</PanelName>
     <PanelDescription>LG Secondary DSI Command Mode AMOLED Panel with DSC DV (1350x1800 24bpp)</PanelDescription>
     <Group id='EDID Configuration'>
         <ManufactureID>0xAF0D</ManufactureID>
@@ -129,6 +129,22 @@ Name (PCFG,
         <DSITEvSyncSelect>1</DSITEvSyncSelect>
         <DSIFlags>2</DSIFlags>
         <DSIEscapeClockFrequency>6000000</DSIEscapeClockFrequency>
+        <DSIHsaHseAfterVsVe>False</DSIHsaHseAfterVsVe>
+        <DSILowPowerModeInHFP>False</DSILowPowerModeInHFP>
+        <DSILowPowerModeInHBP>False</DSILowPowerModeInHBP>
+        <DSILowPowerModeInHSA>False</DSILowPowerModeInHSA>
+        <DSILowPowerModeInBLLPEOF>True</DSILowPowerModeInBLLPEOF>
+        <DSILowPowerModeInBLLP>True</DSILowPowerModeInBLLP>
+        <DSIEnableAutoRefresh>True</DSIEnableAutoRefresh>
+        <DSIPhyDCDCMode>False</DSIPhyDCDCMode>
+        <DSIPacketTransferHS>False</DSIPacketTransferHS>
+        <DSILP11AtInit>True</DSILP11AtInit>
+        <DSIForceCmdInVideoHS>True</DSIForceCmdInVideoHS>
+        <DSITEvSyncInitVal>1800</DSITEvSyncInitVal>
+        <DSIDSCSlicePerPacket>2</DSIDSCSlicePerPacket>
+        <DSICmdModeIdleTime>1</DSICmdModeIdleTime>
+        <DSINullpacketInsertionBytes>1</DSINullpacketInsertionBytes>
+        <DSIPixelXferTiming>3</DSIPixelXferTiming>
     </Group>
     <DSIInitSequence>
         07 11 00
