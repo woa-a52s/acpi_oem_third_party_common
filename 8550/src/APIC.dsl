@@ -16,7 +16,7 @@
 [009h 0009   1]                     Checksum : 8E
 [00Ah 0010   6]                       Oem ID : "QCOM  "
 [010h 0016   8]                 Oem Table ID : "QCOMEDK2"
-[018h 0024   4]                 Oem Revision : 00008280
+[018h 0024   4]                 Oem Revision : 00008380
 [01Ch 0028   4]              Asl Compiler ID : "INTL"
 [020h 0032   4]        Asl Compiler Revision : 20200925
 
@@ -107,7 +107,7 @@
 [14Ch 0332   8]  Hypervisor GIC Base Address : 0000000000000000
 [154h 0340   4]        Virtual GIC Interrupt : 00000019
 [158h 0344   8]   Redistributor Base Address : 0000000017240000
-[160h 0352   8]                    ARM MPIDR : 0000000000010000
+[160h 0352   8]                    ARM MPIDR : 0000000000000300
 [168h 0360   1]             Efficiency Class : 00
 [169h 0361   1]                     Reserved : 00
 [16Ah 0362   2]       SPE Overflow Interrupt : 0000
@@ -129,7 +129,7 @@
 [19Ch 0412   8]  Hypervisor GIC Base Address : 0000000000000000
 [1A4h 0420   4]        Virtual GIC Interrupt : 00000019
 [1A8h 0424   8]   Redistributor Base Address : 0000000017280000
-[1B0h 0432   8]                    ARM MPIDR : 0000000000010100
+[1B0h 0432   8]                    ARM MPIDR : 0000000000000400
 [1B8h 0440   1]             Efficiency Class : 01
 [1B9h 0441   1]                     Reserved : 00
 [1BAh 0442   2]       SPE Overflow Interrupt : 0000
@@ -151,7 +151,7 @@
 [1ECh 0492   8]  Hypervisor GIC Base Address : 0000000000000000
 [1F4h 0500   4]        Virtual GIC Interrupt : 00000019
 [1F8h 0504   8]   Redistributor Base Address : 00000000172C0000
-[200h 0512   8]                    ARM MPIDR : 0000000000010200
+[200h 0512   8]                    ARM MPIDR : 0000000000000500
 [208h 0520   1]             Efficiency Class : 01
 [209h 0521   1]                     Reserved : 00
 [20Ah 0522   2]       SPE Overflow Interrupt : 0000
@@ -173,7 +173,7 @@
 [23Ch 0572   8]  Hypervisor GIC Base Address : 0000000000000000
 [244h 0580   4]        Virtual GIC Interrupt : 00000019
 [248h 0584   8]   Redistributor Base Address : 0000000017300000
-[250h 0592   8]                    ARM MPIDR : 0000000000010300
+[250h 0592   8]                    ARM MPIDR : 0000000000000600
 [258h 0600   1]             Efficiency Class : 01
 [259h 0601   1]                     Reserved : 00
 [25Ah 0602   2]       SPE Overflow Interrupt : 0000
@@ -195,7 +195,7 @@
 [28Ch 0652   8]  Hypervisor GIC Base Address : 0000000000000000
 [294h 0660   4]        Virtual GIC Interrupt : 00000019
 [298h 0664   8]   Redistributor Base Address : 0000000017340000
-[2A0h 0672   8]                    ARM MPIDR : 0000000000020000
+[2A0h 0672   8]                    ARM MPIDR : 0000000000000700
 [2A8h 0680   1]             Efficiency Class : 02
 [2A9h 0681   1]                     Reserved : 00
 [2AAh 0682   2]       SPE Overflow Interrupt : 0000
