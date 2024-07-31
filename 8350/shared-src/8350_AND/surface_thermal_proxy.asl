@@ -55,10 +55,9 @@ Device (TPXY)
     Name (_CRS, ResourceTemplate ()
     {
         // GPIO Pin is 121 and Virtual GPIO pin is 320.
-        //GpioInt(Edge, ActiveBoth, Shared, PullNone, 500, "\\_SB.GIO0", 0, ResourceConsumer, , ) {121} // Main Hall Sensor IRQ
-        GpioInt(Edge, ActiveBoth, Shared, PullUp, 500, "\\_SB.GIO0", 0, ResourceConsumer, , ){320} // Main Hall Sensor IRQ
-        GpioIo(Shared, PullUp, 500, 0, IoRestrictionInputOnly, "\\_SB.GIO0", 0, ResourceConsumer, , ){121} // Main Hall Sensor IO
-        GpioIo(Shared, PullUp, 500, 0, IoRestrictionInputOnly, "\\_SB.GIO0", 0, ResourceConsumer, , ){81} // Secondary Hall Sensor IO
+        GpioInt(Edge, ActiveBoth, Shared, PullNone, 500, "\\_SB.GIO0", 0, ResourceConsumer, , ){38} // Main Hall Sensor IRQ
+        GpioIo(Shared, PullNone, 500, 0, IoRestrictionInputOnly, "\\_SB.GIO0", 0, ResourceConsumer, , ){38} // Main Hall Sensor IO
+        GpioIo(Shared, PullNone, 500, 0, IoRestrictionInputOnly, "\\_SB.GIO0", 0, ResourceConsumer, , ){80} // Secondary Hall Sensor IO
     })
 
     // _DSM - Device-Specific Method

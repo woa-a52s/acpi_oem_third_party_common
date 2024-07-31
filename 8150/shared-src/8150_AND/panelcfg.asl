@@ -28,8 +28,8 @@ Name (PCFG,
     <PanelName>LGSW43416</PanelName>
     <PanelDescription>LG Primary DSI Command Mode AMOLED Panel with DSC DV (1350x1800 24bpp)</PanelDescription>
     <Group id='EDID Configuration'>
-        <ManufactureID>0xAF0D</ManufactureID>
-        <ProductCode>0x01C2</ProductCode>
+        <ManufactureID>0xE430</ManufactureID>
+        <ProductCode>0x3416</ProductCode>
         <SerialNumber>0x000000</SerialNumber>
         <WeekofManufacture>0x09</WeekofManufacture>
         <YearofManufacture>0x13</YearofManufacture>
@@ -106,7 +106,7 @@ Name (PCFG,
         <DSICmdUsingTrigger>False</DSICmdUsingTrigger>
         <DSIInitMasterTime>120</DSIInitMasterTime>
         <DSIEnterULPSPowerDown>False</DSIEnterULPSPowerDown>
-        <DSIBitClockFrequency>500000000</DSIBitClockFrequency>
+        <DSIBitClockFrequency>412000000</DSIBitClockFrequency>
         <DisplayPrimaryFlags>0x00000009</DisplayPrimaryFlags>
         <DisplayPowerSavingOverride>2</DisplayPowerSavingOverride>
         <DSIClockHSForceRequest>1</DSIClockHSForceRequest>
