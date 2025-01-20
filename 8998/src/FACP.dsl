@@ -3,7 +3,7 @@
  * AML/ASL+ Disassembler version 20200925 (64-bit version)
  * Copyright (c) 2000 - 2020 Intel Corporation
  * 
- * Disassembly of facp.aml, Mon Mar 20 23:08:11 2023
+ * Disassembly of FACP.aml, Sun Jan 19 20:27:15 2025
  *
  * ACPI Data Table [FACP]
  *
@@ -11,17 +11,17 @@
  */
 
 [000h 0000   4]                    Signature : "FACP"    [Fixed ACPI Description Table (FADT)]
-[004h 0004   4]                 Table Length : 00000114
+[004h 0004   4]                 Table Length : 0000010C
 [008h 0008   1]                     Revision : 05
-[009h 0009   1]                     Checksum : 0E
+[009h 0009   1]                     Checksum : C4
 [00Ah 0010   6]                       Oem ID : "QCOM  "
 [010h 0016   8]                 Oem Table ID : "QCOMEDK2"
 [018h 0024   4]                 Oem Revision : 00008998
-[01Ch 0028   4]              Asl Compiler ID : "QCOM"
+[01Ch 0028   4]              Asl Compiler ID : "INTL"
 [020h 0032   4]        Asl Compiler Revision : 00000001
 
-[024h 0036   4]                 FACS Address : 9E788000
-[028h 0040   4]                 DSDT Address : 9BB81000
+[024h 0036   4]                 FACS Address : 00000000
+[028h 0040   4]                 DSDT Address : 00000000
 [02Ch 0044   1]                        Model : 00
 [02Dh 0045   1]                   PM Profile : 08 [Tablet]
 [02Eh 0046   2]                SCI Interrupt : 0000
@@ -100,8 +100,8 @@
                        Must use HVC for PSCI : 0
 
 [083h 0131   1]          FADT Minor Revision : 00
-[084h 0132   8]                 FACS Address : 000000009E788000
-[08Ch 0140   8]                 DSDT Address : 000000009BB81000
+[084h 0132   8]                 FACS Address : 0000000000000000
+[08Ch 0140   8]                 DSDT Address : 0000000000000000
 [094h 0148  12]             PM1A Event Block : [Generic Address Structure]
 [094h 0148   1]                     Space ID : 00 [SystemMemory]
 [095h 0149   1]                    Bit Width : 00
@@ -173,21 +173,19 @@
 [103h 0259   1]         Encoded Access Width : 00 [Undefined/Legacy]
 [104h 0260   8]                      Address : 0000000000000000
 
-[10Ch 0268   8]                Hypervisor ID : 000000004D4F4351
+/**** ACPI table terminates in the middle of a data structure! (dump table) */
 
-// ACPI Warning: FADT revision 5 does not match length: found 114 expected 10C
+Raw Table Data: Length 268 (0x10C)
 
-Raw Table Data: Length 276 (0x114)
-
-    0000: 46 41 43 50 14 01 00 00 05 0E 51 43 4F 4D 20 20  // FACP......QCOM  
-    0010: 51 43 4F 4D 45 44 4B 32 98 89 00 00 51 43 4F 4D  // QCOMEDK2....QCOM
-    0020: 01 00 00 00 00 80 78 9E 00 10 B8 9B 00 08 00 00  // ......x.........
+    0000: 46 41 43 50 0C 01 00 00 05 C4 51 43 4F 4D 20 20  // FACP......QCOM  
+    0010: 51 43 4F 4D 45 44 4B 32 98 89 00 00 49 4E 54 4C  // QCOMEDK2....INTL
+    0020: 25 09 20 20 00 00 00 00 00 00 00 00 00 08 00 00  // %.  ............
     0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     0050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     0070: 00 00 30 00 03 00 00 03 B4 20 90 00 00 00 00 00  // ..0...... ......
-    0080: 01 01 00 00 00 80 78 9E 00 00 00 00 00 10 B8 9B  // ......x.........
+    0080: 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     0090: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     00A0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     00B0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
@@ -195,5 +193,4 @@ Raw Table Data: Length 276 (0x114)
     00D0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     00E0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
     00F0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  // ................
-    0100: 00 00 00 00 00 00 00 00 00 00 00 00 51 43 4F 4D  // ............QCOM
-    0110: 00 00 00 00                                      // ....
+    0100: 00 00 00 00 00 00 00 00 00 00 00 00              // ............

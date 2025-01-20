@@ -3,7 +3,7 @@
  * AML/ASL+ Disassembler version 20200925 (64-bit version)
  * Copyright (c) 2000 - 2020 Intel Corporation
  * 
- * Disassembly of gtdt.aml, Mon Mar 20 23:08:11 2023
+ * Disassembly of GTDT.aml, Sun Jan 19 20:27:15 2025
  *
  * ACPI Data Table [GTDT]
  *
@@ -13,11 +13,11 @@
 [000h 0000   4]                    Signature : "GTDT"    [Generic Timer Description Table]
 [004h 0004   4]                 Table Length : 0000009C
 [008h 0008   1]                     Revision : 02
-[009h 0009   1]                     Checksum : D3
+[009h 0009   1]                     Checksum : 5F
 [00Ah 0010   6]                       Oem ID : "QCOM  "
 [010h 0016   8]                 Oem Table ID : "QCOMEDK2"
 [018h 0024   4]                 Oem Revision : 00008998
-[01Ch 0028   4]              Asl Compiler ID : "QCOM"
+[01Ch 0028   4]              Asl Compiler ID : "INTL"
 [020h 0032   4]        Asl Compiler Revision : 00000001
 
 [024h 0036   8]        Counter Block Address : FFFFFFFFFFFFFFFF
@@ -76,9 +76,9 @@
 
 Raw Table Data: Length 156 (0x9C)
 
-    0000: 47 54 44 54 9C 00 00 00 02 D3 51 43 4F 4D 20 20  // GTDT......QCOM  
-    0010: 51 43 4F 4D 45 44 4B 32 98 89 00 00 51 43 4F 4D  // QCOMEDK2....QCOM
-    0020: 01 00 00 00 FF FF FF FF FF FF FF FF 00 00 00 00  // ................
+    0000: 47 54 44 54 9C 00 00 00 02 5F 51 43 4F 4D 20 20  // GTDT....._QCOM  
+    0010: 51 43 4F 4D 45 44 4B 32 98 89 00 00 49 4E 54 4C  // QCOMEDK2....INTL
+    0020: 25 09 20 20 FF FF FF FF FF FF FF FF 00 00 00 00  // %.  ............
     0030: 11 00 00 00 00 00 00 00 12 00 00 00 00 00 00 00  // ................
     0040: 13 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  // ................
     0050: FF FF FF FF FF FF FF FF 01 00 00 00 60 00 00 00  // ............`...
